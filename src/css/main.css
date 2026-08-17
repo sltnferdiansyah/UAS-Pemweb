@@ -1,0 +1,105 @@
+.block-bg {
+  position: fixed;
+  background: #1E1E1E;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.block-bg {
+  background-image:
+    conic-gradient(rgba(205, 205, 205, 0.01) 25%, transparent 25%, transparent 50%, rgba(205, 205, 205, 0.01) 50%, rgba(205, 205, 205, 0.01) 75%, transparent 75%),
+    linear-gradient(150deg, #1e1e1e 10%, #1d1a1d 90%);
+  background-size: 8em 8em, 100% 100%;
+  animation: chesswalking 3.5s linear infinite;
+}
+
+@keyframes chesswalking {
+  from {
+    background-position: 0 0, 0 0;
+  }
+
+  to {
+    background-position: 8em 8em, 0 0;
+  }
+}
+
+.container-web {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  color: #e7fcfa;
+}
+
+.header-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8vh;
+  /* background: #e7fcfa; */
+}
+
+.home-container {
+  display: flex;
+  flex: 1 0 0;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  gap: 10vw;
+  padding-inline: 10vw;
+}
+
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vw
+}
+
+.typography-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 37vh;
+}
+
+.button-start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.92vw;
+
+  border: 0.16vw solid #78B9B5;
+  border-radius: calc(infinity * 1px);
+  background: #0F828C;
+  padding-block: 0.75vw;
+  width: 21vw;
+
+  font-size: 2.15vw;
+  font-weight: 600;
+  font-family: 'Outfit';
+  letter-spacing: 1%;
+  color: #e7fcfa;
+
+  cursor: pointer;
+}
+
+.windows-wrapper {
+  display: flex;
+  overflow: hidden;
+  flex: 1 0 0;
+  background: #0F828C;
+  height: 65vh;
+  border-radius: 1.2vw;
+  border: #78B9B5 0.16vw solid;
+
+}
+
+.toolbar-windows {
+  background: #78B9B5;
+  width: 100vw;
+  height: 5vh;
+}

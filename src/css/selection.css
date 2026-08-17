@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Outfit';
+  src: url(public/fonts/Outfit.ttf);
+  font-display: block;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.block-bg {
+  position: fixed;
+  background: #1E1E1E;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.container-web {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+}
+
+.header-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8vh;
+  /* background: white; */
+}
+
+.selection-menu {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-course {
+  list-style-type: none;
+  background: #78B9B5;
+
+  display: flex;
+
+  font-family: 'Outfit';
+  font-size: 2.15vw;
+  font-weight: 700;
+}

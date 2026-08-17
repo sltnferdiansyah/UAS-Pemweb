@@ -1,0 +1,17 @@
+{
+  "name": "untitled-simpel-edu-abt-web",
+  "version": "0.0.1",
+  "description": "website edukasi simpel tentang perweb-an (dan belum ada kucing :< )",
+  "license": "ISC",
+  "author": "Afinz (Dhafin Zhilal Syaikhoh Adz - Dzaki)",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "prodpack": "vite build --base=./ --mode production && node scripts/copy_src.js && node scripts/pack_dist.js"
+
+  },
+  "dependencies": {
+    "navigo": "^8.11.1",
+    "vite": "^8.2.1"
+  }
+}

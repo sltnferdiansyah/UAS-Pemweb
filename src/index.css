@@ -1,0 +1,46 @@
+    @font-face {
+      font-family: 'Outfit';
+      src: url(public/fonts/Outfit.ttf);
+      font-display: block;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .overlay-transition {
+      z-index: 999;
+      position: fixed;
+      width: 100vw;
+      height: 350vh;
+      background-color: #2a282c;
+      border-radius: calc(infinity * 1px);
+      display: none;
+        outline: #3f3f3f 0.92vw solid;
+
+    }
+
+    .animate-out-up {
+      display: block !important;
+      animation:
+        static_bzz 1s linear infinite,
+        initial_box 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    @keyframes initial_box {
+      0% {
+        translate: 0px 0px;
+      }
+
+      30% {
+        translate: 0px 0px;
+      }
+
+      100% {
+        translate: 0px -100%;
+      }
+    }
+
+
