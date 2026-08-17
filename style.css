@@ -1,0 +1,36 @@
+/* Efek transisi halus saat berganti mode gelap/terang */
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Styling khusus untuk bagian Hero */
+.hero-section {
+    background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* --- Konfigurasi Dark Mode --- */
+.dark-mode {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+/* Menyesuaikan warna card di dark mode */
+.dark-mode .card {
+    background-color: #343a40;
+    color: white;
+}
+
+/* Menyesuaikan warna teks tabel di dark mode */
+.dark-mode .table {
+    color: white;
+}
+
+/* Styling untuk container video dan audio */
+.media-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
