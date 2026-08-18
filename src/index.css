@@ -13,20 +13,38 @@
     .overlay-transition {
       z-index: 999;
       position: fixed;
-      width: 100vw;
+      left: 0;
+      right: 0;
       height: 350vh;
       background-color: #2a282c;
       border-radius: calc(infinity * 1px);
       display: none;
-        outline: #3f3f3f 0.92vw solid;
+      outline: #3f3f3f 0.92vw solid;
 
     }
 
-    .animate-out-up {
+    .animate-out {
       display: block !important;
       animation:
-        static_bzz 1s linear infinite,
         initial_box 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    .animate-in {
+      display: block !important;
+      animation:
+        uninitial_box 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    .animate-out-1s {
+      display: block !important;
+      animation:
+        initial_box 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    .animate-in-1s {
+      display: block !important;
+      animation:
+        uninitial_box 1s cubic-bezier(0.39, 0.575, 0.565, 1);
     }
 
     @keyframes initial_box {
@@ -40,6 +58,20 @@
 
       100% {
         translate: 0px -100%;
+      }
+    }
+
+    @keyframes uninitial_box {
+      0% {
+        translate: 0px 100%;
+      }
+
+      30% {
+        translate: 0px 100%;
+      }
+
+      100% {
+        translate: 0px 0px;
       }
     }
 

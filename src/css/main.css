@@ -92,15 +92,15 @@
   display: flex;
   overflow: hidden;
   flex: 1 0 0;
-  background: #0F828C;
+  background: #202020;
   height: 65vh;
   border-radius: 1.2vw;
-  border: #78B9B5 0.16vw solid;
+  border: #0F828C 0.16vw solid;
 
 }
 
 .toolbar-windows {
-  background: #78B9B5;
+  background: #0F828C;
   display: flex;
   align-items: center;
   width: 100vw;
@@ -119,6 +119,7 @@ input[type="radio"] {
 .radio-label {
   display: flex;
   align-items: center;
+  gap: 0.7vw;
   width: 28%;
   height: 100%;
   padding-inline: 0.92vw;
@@ -128,16 +129,15 @@ input[type="radio"] {
   font-family: 'Outfit';
   font-size: 1.25vw;
   font-weight: 500;
+  color: #F4F4F4;
   transition: background 0.2s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .radio-label:hover {
-  background-color: white;
-  
+  background-color: #2b2b2b32;
 }
 
-
 input[type="radio"]:checked + .radio-label {
-  background-color: #009688;
-  color: white;
+  background-color: #f4f4f43B;
+  color: #F4F4F4;
 }

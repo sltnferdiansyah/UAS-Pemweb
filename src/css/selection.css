@@ -1,10 +1,9 @@
 .container-web {
-  justify-content: center;
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  color: white;
+  color: #e7fcfa;
 }
 
 .header-container {
@@ -15,7 +14,18 @@
   height: 8vh;
 }
 
-.selection-menu {
+.selection-container {
+  display: flex;
+  flex: 1 0 0;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  gap: 10vw;
+  padding-inline: 12vw 10vw;
+  user-select: none;
+}
+
+/* .selection-menu {
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -30,4 +40,4 @@
   font-family: 'Outfit';
   font-size: 2.15vw;
   font-weight: 700;
-}
+} */

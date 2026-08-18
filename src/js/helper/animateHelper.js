@@ -22,10 +22,13 @@ async function addIn(countclass, intialClass, animClass, delay, initialDelay, is
                     getIniElm[index]?.classList.remove(animClass);
                 });
 
-                currIdx = index;
-                if (currIdx === (countclass - 1)) {
-                    whenAnimationDone?.();
-                }
+                getAnimElm[index]?.addEventListener('animationend', () => {
+                    currIdx += 1;
+                    if (currIdx === countclass) {
+                        whenAnimationDone?.();
+                    }
+                }, { once: true });
+                
             } else {
                 requestAnimationFrame(tick);
             }

@@ -2,7 +2,7 @@ import Navigo from "navigo";
 import "./index.css";
 import mainPage from "./html/main.html?raw";
 import selectionPage from "./html/selection.html?raw";
-import "./css/main.css";
+import somethingPage from "./html/something.html?raw";
 import { mainPageJS } from "./js/mainPage.js";
 import { selectionPageJS } from "./js/selectionPage.js";
 
@@ -33,7 +33,6 @@ router
         selectionPageJS();
     })
     .on("/04042026", () => {
-        htmlPage(selectionPage);
-        selectionPageJS();
+        htmlPage(somethingPage);
     })
     .resolve();
