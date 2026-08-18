@@ -30,7 +30,7 @@ router
     })
     .on("/selection", () => {
         htmlPage(selectionPage);
-        selectionPageJS();
+        selectionPageJS(router);
     })
     .on("/04042026", () => {
         htmlPage(somethingPage);

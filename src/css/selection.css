@@ -11,7 +11,10 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 8vh;
+  height: 10vh;
+  padding-inline: 0.92vw;
+  display: flex;
+  align-items: center;
 }
 
 .selection-container {
@@ -23,6 +26,33 @@
   gap: 10vw;
   padding-inline: 12vw 10vw;
   user-select: none;
+}
+
+.home-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65vw;
+
+  border: 0.16vw solid #78B9B5;
+  border-radius: calc(infinity * 1px);
+  background: #0F828C;
+  padding-block: 0.26vw;
+  padding-inline: 1.15vw;
+
+  font-size: 1.25vw;
+  font-weight: 600;
+  font-family: 'Outfit';
+  letter-spacing: 2%;
+  color: #e7fcfa;
+
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.home-btn:hover {
+  background: #0c666e;
+  scale: 105%;
 }
 
 /* .selection-menu {

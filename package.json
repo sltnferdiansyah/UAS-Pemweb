@@ -8,9 +8,9 @@
   "scripts": {
     "start": "vite",
     "prodpack": "vite build --base=./ --mode production && node scripts/copy_src.js && node scripts/pack_dist.js"
-
   },
   "dependencies": {
+    "animejs": "^4.5.0",
     "navigo": "^8.11.1",
     "vite": "^8.2.1"
   }

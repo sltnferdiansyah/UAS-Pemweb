@@ -20,7 +20,10 @@
       border-radius: calc(infinity * 1px);
       display: none;
       outline: #3f3f3f 0.92vw solid;
+    }
 
+    .keep-overlay {
+      display: block;
     }
 
     .animate-out {
@@ -45,6 +48,15 @@
       display: block !important;
       animation:
         uninitial_box 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    .animate-out-text {
+      animation:
+        hidden_thing 1.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    .hidden-thing {
+      display: none;
     }
 
     @keyframes initial_box {
@@ -72,6 +84,20 @@
 
       100% {
         translate: 0px 0px;
+      }
+    }
+
+    @keyframes hidden_thing {
+      0% {
+        opacity: 100;
+      }
+
+      30% {
+        opacity: 100;
+      }
+
+      100% {
+        opacity: 0;
       }
     }
 

@@ -9,7 +9,7 @@ async function addIn(countclass, intialClass, animClass, delay, initialDelay, is
 
     for (let index = 0; index <= (countclass - 1); index++) {
         const targetTime = (startTime + initialDelay) + delay * index;
-        const tick = () => {
+        const tick = () => {    
             const currTime = performance.now();
 
             if (currTime >= targetTime) {
@@ -28,7 +28,7 @@ async function addIn(countclass, intialClass, animClass, delay, initialDelay, is
                         whenAnimationDone?.();
                     }
                 }, { once: true });
-                
+
             } else {
                 requestAnimationFrame(tick);
             }

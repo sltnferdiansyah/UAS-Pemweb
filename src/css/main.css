@@ -39,8 +39,10 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 8vh;
-  /* background: #e7fcfa; */
+  height: 10vh;
+  padding-inline: 0.92vw;
+  display: flex;
+  align-items: center;
 }
 
 .home-container {
@@ -86,6 +88,39 @@
   color: #e7fcfa;
 
   cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.reset-spalsh-btn {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65vw;
+
+  border: 0.16vw solid #694996;
+  border-radius: calc(infinity * 1px);
+  background: #320A6B;
+  padding-block: 0.26vw;
+  padding-inline: 1.15vw;
+
+  font-size: 1.25vw;
+  font-weight: 600;
+  font-family: 'Outfit';
+  letter-spacing: 2%;
+  color: #e7fcfa;
+
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.reset-spalsh-btn:hover {
+  background: #35037b;
+  scale: 105%;
+}
+
+.button-start:hover {
+  background: #0c666e;
+  scale: 105%;
 }
 
 .windows-wrapper {
@@ -96,7 +131,6 @@
   height: 65vh;
   border-radius: 1.2vw;
   border: #0F828C 0.16vw solid;
-
 }
 
 .toolbar-windows {
@@ -105,11 +139,6 @@
   align-items: center;
   width: 100vw;
   height: 5vh;
-}
-
-.btn-selection {
-  display: flex;
-  flex: 1 0 0;
 }
 
 input[type="radio"] {
@@ -129,7 +158,7 @@ input[type="radio"] {
   font-family: 'Outfit';
   font-size: 1.25vw;
   font-weight: 500;
-  color: #F4F4F4;
+  color: #e7fcfa;
   transition: background 0.2s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
@@ -139,5 +168,5 @@ input[type="radio"] {
 
 input[type="radio"]:checked + .radio-label {
   background-color: #f4f4f43B;
-  color: #F4F4F4;
+  color: #e7fcfa;
 }
