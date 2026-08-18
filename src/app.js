@@ -22,10 +22,17 @@ const htmlPage = (html) => {
 
 router
     .on("/", () => {
+        router.navigate("/main");
+    })
+    .on("/main", () => {
         htmlPage(mainPage);
         mainPageJS(router);
     })
     .on("/selection", () => {
+        htmlPage(selectionPage);
+        selectionPageJS();
+    })
+    .on("/04042026", () => {
         htmlPage(selectionPage);
         selectionPageJS();
     })

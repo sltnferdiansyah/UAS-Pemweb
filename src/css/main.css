@@ -10,7 +10,7 @@
 
 .block-bg {
   background-image:
-    conic-gradient(rgba(205, 205, 205, 0.01) 25%, transparent 25%, transparent 50%, rgba(205, 205, 205, 0.01) 50%, rgba(205, 205, 205, 0.01) 75%, transparent 75%),
+    conic-gradient(rgba(205, 205, 205, 0.025) 25%, transparent 25%, transparent 50%, rgba(205, 205, 205, 0.025) 50%, rgba(205, 205, 205, 0.025) 75%, transparent 75%),
     linear-gradient(150deg, #1e1e1e 10%, #1d1a1d 90%);
   background-size: 8em 8em, 100% 100%;
   animation: chesswalking 3.5s linear infinite;
@@ -50,7 +50,8 @@
   align-items: center;
   justify-content: center;
   gap: 10vw;
-  padding-inline: 10vw;
+  padding-inline: 12vw 10vw;
+  user-select: none;
 }
 
 .main-menu {
@@ -100,6 +101,43 @@
 
 .toolbar-windows {
   background: #78B9B5;
+  display: flex;
+  align-items: center;
   width: 100vw;
   height: 5vh;
+}
+
+.btn-selection {
+  display: flex;
+  flex: 1 0 0;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  width: 28%;
+  height: 100%;
+  padding-inline: 0.92vw;
+
+  cursor: pointer;
+
+  font-family: 'Outfit';
+  font-size: 1.25vw;
+  font-weight: 500;
+  transition: background 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.radio-label:hover {
+  background-color: white;
+  
+}
+
+
+input[type="radio"]:checked + .radio-label {
+  background-color: #009688;
+  color: white;
 }

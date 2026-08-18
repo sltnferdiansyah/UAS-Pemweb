@@ -1,25 +1,3 @@
-@font-face {
-  font-family: 'Outfit';
-  src: url(public/fonts/Outfit.ttf);
-  font-display: block;
-}
-
-body {
-  margin: 0;
-  height: 100vh;
-  width: 100vw;
-}
-
-.block-bg {
-  position: fixed;
-  background: #1E1E1E;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 .container-web {
   justify-content: center;
   display: flex;
@@ -35,7 +13,6 @@ body {
   left: 0;
   right: 0;
   height: 8vh;
-  /* background: white; */
 }
 
 .selection-menu {
