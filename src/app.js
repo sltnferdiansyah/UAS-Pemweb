@@ -34,13 +34,13 @@ router
             mainPageJS(router, false);
         } else {
             if (isFirstLoad) {
-            mainPageJS(router, true);
-            isFirstLoad = false
+                mainPageJS(router, true);
+                isFirstLoad = false
             } else {
                 mainPageJS(router, false);
             }
         }
-        
+
     })
     .on("/selection", () => {
         htmlPage(selectionPage);

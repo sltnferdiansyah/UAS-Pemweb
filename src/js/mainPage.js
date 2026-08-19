@@ -1,12 +1,27 @@
 import { animationHandler } from "./helper/animateHelper";
 import { reactiveHelper } from "./helper/reactiveHelper";
-
+import aboutPage from "../html/partial/about.html?raw";
+import mainIntro from "../html/partial/videointro.html?raw";
+import loadingSequence from "../html/partial/loadingsequence.html?raw";
 
 export function mainPageJS(router, isFirstLoad = true) {
     const startButton = document.querySelector(".button-start");
     const splashButton = document.querySelector(".reset-spalsh-btn");
     const splashLogo = document.querySelector("#splash-logo")
     let isDebouncePageOnly = false;
+    let tempVariable = isFirstLoad
+
+
+    // DOM loader untuk uhh- windows..?
+    const domParser = (html) => {
+        const parser = new DOMParser();
+        return parser.parseFromString(html, "text/html");
+    };
+
+    const windowsPage = (html) => {
+        const parsedDocument = domParser(html);
+        document.querySelector(".windows-content").replaceChildren(...parsedDocument.body.childNodes);
+    };
 
     // Simpel splash controller
     function stopSplashLogo() {
@@ -37,7 +52,6 @@ export function mainPageJS(router, isFirstLoad = true) {
         });
     }
 
-
     reactiveHelper.whenDOMLoaded(() => {
         if (isFirstLoad) {
             animationHandler.addClass(1, "anim-1", ["keep-overlay"]);
@@ -64,20 +78,6 @@ export function mainPageJS(router, isFirstLoad = true) {
         }
     });
 
-    reactiveHelper.selectionToolbar("toolbar-windows", ((selectedId) => {
-        // Coba pakai "switch case" disini :>
-        switch (selectedId) {
-            case "main":
-                
-                break;
-            case "about":
-
-                break;
-            default:
-                break;
-        }
-    }))
-
     splashButton?.addEventListener("click", () => {
         if (!isDebouncePageOnly) {
             isDebouncePageOnly = true
@@ -98,4 +98,34 @@ export function mainPageJS(router, isFirstLoad = true) {
             }));
         }
     });
+
+    reactiveHelper.bindFormRadio("toolbar-windows", ((selectedId) => {
+        // Coba pakai "switch case" disini :>
+        switch (selectedId) {
+            case "main":
+                if (tempVariable) {
+                    tempVariable = false
+                    windowsPage(loadingSequence)
+                    reactiveHelper.timeout(() => {
+                        windowsPage(mainIntro)
+                    }, 4500)
+                } else {
+                    windowsPage(loadingSequence)
+                    reactiveHelper.timeout(() => {
+                        windowsPage(mainIntro)
+                    }, 1200)
+                }
+                break;
+            case "about":
+                windowsPage(loadingSequence)
+                reactiveHelper.timeout(() => {
+                    windowsPage(aboutPage)
+                    animationHandler.addIn(4, "anim-2", "initial-in", 150, 0, true)
+                }, 1200)
+                break;
+            default:
+                break;
+        }
+    }), 1400);
+
 }

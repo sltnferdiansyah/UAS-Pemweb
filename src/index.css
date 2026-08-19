@@ -73,6 +73,44 @@
       display: block;
     }
 
+    .loadingseq {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url("/public/img/pattern.png");
+        background-size: 100em 100em;
+        background-color: #202020;
+      animation: loadseqanim 10.5s linear infinite;
+    }
+
+    .spin-laoding {
+      animation: spin_spin_icon 2.5s ease-in-out infinite;
+    }
+
+    @keyframes loadseqanim {
+      from {
+        background-position: -25em 0;
+      }
+
+      to {
+        background-position: -25em 100em;
+      }
+    }
+
+    @keyframes spin_spin_icon {
+  0%{
+    transform: rotate(-35deg);
+  }
+  60%{
+    transform: rotate(395deg);
+  }
+  100%{
+    transform: rotate(325deg);
+  }
+}
+
     .animate-out {
       display: block !important;
       animation:
@@ -100,6 +138,15 @@
     .animate-out-text {
       animation:
         hidden_thing 1.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    .initial-in {
+      animation:
+        initial_1 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    .hide-sequence {
+      opacity: 0;
     }
 
     .hidden-thing {
@@ -145,5 +192,22 @@
 
       100% {
         opacity: 0;
+      }
+    }
+
+    @keyframes initial_1 {
+      0% {
+        opacity: 0;
+        translate: -0px -10%;
+      }
+
+      30% {
+        opacity: 0;
+        translate: 0px -10%;
+      }
+
+      100% {
+        opacity: 1;
+        translate: 0px 0px;
       }
     }
