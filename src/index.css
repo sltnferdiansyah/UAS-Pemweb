@@ -1,6 +1,6 @@
     @font-face {
       font-family: 'Outfit';
-      src: url(public/fonts/Outfit.ttf);
+      src: url("/fonts/Outfit.ttf");
       font-display: block;
     }
 
@@ -79,7 +79,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: url("/public/img/pattern.png");
+        background: url("/img/pattern.png");
         background-size: 100em 100em;
         background-color: #202020;
       animation: loadseqanim 10.5s linear infinite;
