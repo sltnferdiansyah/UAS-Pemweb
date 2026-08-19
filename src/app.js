@@ -9,7 +9,7 @@ import { mainPageJS } from "./js/mainPage.js";
 import { selectionPageJS } from "./js/selectionPage.js";
 
 const app = document.querySelector("#app");
-const router = new Navigo("/");
+const router = new Navigo("/", { hash: true });
 const navigationType = performance.getEntriesByType("navigation")[0]?.type;
 let isFirstLoad = true;
 
