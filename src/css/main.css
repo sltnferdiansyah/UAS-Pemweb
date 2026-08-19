@@ -130,3 +130,29 @@ input[type="radio"]:checked+.radio-label {
   background-color: #f4f4f43B;
   color: #e7fcfa;
 }
+
+.sound-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65vw;
+
+  border: 0.16vw solid #78B9B5;
+  border-radius: calc(infinity * 1px);
+  background: #0F828C;
+  padding-block: 0.26vw;
+  padding-inline: 1.15vw;
+
+  font-size: 1.25vw;
+  font-weight: 600;
+  font-family: 'Outfit';
+  letter-spacing: 2%;
+  color: #e7fcfa;
+
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.sound-btn:hover {
+  background: #0c666e;
+}

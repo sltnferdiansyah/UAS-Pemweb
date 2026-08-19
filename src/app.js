@@ -7,11 +7,14 @@ import selectionPage from "./html/selection.html?raw";
 import somethingPage from "./html/something.html?raw";
 import { mainPageJS } from "./js/mainPage.js";
 import { selectionPageJS } from "./js/selectionPage.js";
+import { playGlobalMusic, setupMusicControls } from "./js/musicManager.js";
 
 const app = document.querySelector("#app");
 const router = new Navigo("/", { hash: true });
 const navigationType = performance.getEntriesByType("navigation")[0]?.type;
 let isFirstLoad = true;
+
+setupMusicControls();
 
 const domParser = (html) => {
     const parser = new DOMParser();
@@ -30,6 +33,7 @@ router
     })
     .on("/main", () => {
         htmlPage(mainPage);
+        playGlobalMusic();
         if (navigationType == "reload") {
             mainPageJS(router, false);
         } else {
@@ -44,9 +48,11 @@ router
     })
     .on("/selection", () => {
         htmlPage(selectionPage);
+        playGlobalMusic();
         selectionPageJS(router);
     })
     .on("/04042026", () => {
         htmlPage(somethingPage);
+        playGlobalMusic();
     })
     .resolve();
