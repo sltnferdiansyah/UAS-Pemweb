@@ -1,5 +1,7 @@
 import Navigo from "navigo";
 import "./index.css";
+import "./css/main.css";
+import "./css/selection.css";
 import mainPage from "./html/main.html?raw";
 import selectionPage from "./html/selection.html?raw";
 import somethingPage from "./html/something.html?raw";
@@ -8,6 +10,8 @@ import { selectionPageJS } from "./js/selectionPage.js";
 
 const app = document.querySelector("#app");
 const router = new Navigo("/");
+const navigationType = performance.getEntriesByType("navigation")[0]?.type;
+let isFirstLoad = true;
 
 const domParser = (html) => {
     const parser = new DOMParser();
@@ -26,7 +30,17 @@ router
     })
     .on("/main", () => {
         htmlPage(mainPage);
-        mainPageJS(router);
+        if (navigationType == "reload") {
+            mainPageJS(router, false);
+        } else {
+            if (isFirstLoad) {
+            mainPageJS(router, true);
+            isFirstLoad = false
+            } else {
+                mainPageJS(router, false);
+            }
+        }
+        
     })
     .on("/selection", () => {
         htmlPage(selectionPage);

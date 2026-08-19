@@ -10,6 +10,53 @@
       width: 100vw;
     }
 
+    .block-bg {
+      position: fixed;
+      background: #1E1E1E;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .block-bg {
+      background-image:
+        conic-gradient(rgba(205, 205, 205, 0.025) 25%, transparent 25%, transparent 50%, rgba(205, 205, 205, 0.025) 50%, rgba(205, 205, 205, 0.025) 75%, transparent 75%),
+        linear-gradient(150deg, #1e1e1e 10%, #1d1a1d 90%);
+      background-size: 8em 8em, 100% 100%;
+      animation: chesswalking 3.5s linear infinite;
+    }
+
+    @keyframes chesswalking {
+      from {
+        background-position: 0 0, 0 0;
+      }
+
+      to {
+        background-position: 8em 8em, 0 0;
+      }
+    }
+
+    .container-web {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+      color: #e7fcfa;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 10vh;
+      padding-inline: 0.92vw;
+      display: flex;
+      align-items: center;
+    }
+
     .overlay-transition {
       z-index: 999;
       position: fixed;
@@ -100,5 +147,3 @@
         opacity: 0;
       }
     }
-
-

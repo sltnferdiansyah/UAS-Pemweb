@@ -7,17 +7,18 @@ function whenDOMLoaded(callback) {
 }
 
 function whenDOMReactive(reactive) {
-    let cleanup = null;
-    const run = () => {
-        if (typeof cleanup === 'function') {
-            cleanup();
-        }
-        cleanup() = reactive() || null
-    };
-    run();
-    return run;
+  let cleanup = null;
+  const run = () => {
+    if (typeof cleanup === 'function') {
+      cleanup();
+    }
+    cleanup() = reactive() || null
+  };
+  run();
+  return run;
 }
 
+// Aku malas untuk membuat file helper baru :P
 function timeout(callback, delay = Number()) {
   const start = performance.now();
 
@@ -48,7 +49,35 @@ function interval(callback, interval) {
   requestAnimationFrame(tick);
 }
 
+function selectionToolbar(nameClassForm = String(), onChange) {
+  const form = document.querySelector(`.${nameClassForm}`);
+  if (!form) return () => { };
 
+  const getSelectedValue = (radio) => radio?.id || radio?.value || null;
 
-export const reactiveHelper = { whenDOMLoaded, whenDOMReactive, timeout, interval };
+  const emitCurrent = () => {
+    const checked = form.querySelector('input[name="selection_toolbar"]:checked');
+    const value = getSelectedValue(checked);
+    if (value) onChange?.(value, checked);
+  };
+
+  const handleChange = (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLInputElement)) return;
+    if (target.name !== 'selection_toolbar') return;
+
+    const value = getSelectedValue(target);
+    if (value) onChange?.(value, target);
+  };
+
+  form.addEventListener('change', handleChange);
+
+  emitCurrent();
+
+  return () => {
+    form.removeEventListener('change', handleChange);
+  };
+}
+
+export const reactiveHelper = { whenDOMLoaded, whenDOMReactive, timeout, interval, selectionToolbar };
 

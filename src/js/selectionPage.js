@@ -1,7 +1,5 @@
 import { animationHandler } from "./helper/animateHelper";
 import { reactiveHelper } from "./helper/reactiveHelper";
-import "../css/selection.css";
-
 
 export function selectionPageJS(router) {
     const homeButton = document.querySelector(".home-btn");
