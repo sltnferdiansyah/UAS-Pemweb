@@ -76,6 +76,7 @@
 }
 
 .windows-wrapper {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -97,6 +98,7 @@
 .windows-content {
   flex: 1 0 0;
   align-self: stretch;
+  overflow: hidden;
 }
 
 input[type="radio"] {

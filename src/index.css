@@ -8,6 +8,12 @@
       margin: 0;
       height: 100vh;
       width: 100vw;
+      overflow: hidden;
+    }
+
+    #app {
+      height: 100vh;
+      width: 100vw;
     }
 
     .block-bg {
@@ -209,5 +215,15 @@
       100% {
         opacity: 1;
         translate: 0px 0px;
+      }
+    }
+
+    @media screen and (orientation: portrait) and (max-width: 1024px) {
+      #app {
+        display: none;
+      }
+
+      .device-guard {
+        display: flex;
       }
     }
